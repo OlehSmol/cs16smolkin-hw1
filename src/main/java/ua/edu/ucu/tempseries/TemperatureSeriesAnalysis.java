@@ -102,6 +102,9 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsLessThen(double tempValue) {
+        if (temperatures.length == 0) {
+            throw new IllegalArgumentException();
+        }
         int count = 0;
         for (int i = 0; i < temperatures.length; i++){
             if (temperatures[i] < tempValue) {
@@ -123,6 +126,9 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsGreaterThen(double tempValue) {
+        if (temperatures.length == 0) {
+            throw new IllegalArgumentException();
+        }
         int count = 0;
         for (int i = 0; i < temperatures.length; i++){
             if (temperatures[i] > tempValue) {
